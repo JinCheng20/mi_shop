@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米账号 - 注册</title>
+    <link rel="stylesheet" href="css/login_up.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="js/ajax1.0.0.js"></script>
+</head>
+
+<body>
+    <div id="login_up_content">
+        <!-- top_logo -->
+        <span class="login_up_logo"></span>
+        <!-- top_title -->
+        <div class="login_up_title">
+            <h2>注册小米账号</h2>
+        </div>
+        <!-- form -->
+        <div class="formbox">
+            <!-- <h3>国家/地区</h3> -->
+            <h3>账号</h3>
+            <div class="country_select">
+                <div class="country_content">
+                    <!-- <p>
+                        中国
+                    </p> -->
+                    <input type="text" placeholder="请输入账号" class="user_input">
+                    <!-- <i></i> -->
+                </div>
+            </div>
+            
+            <div class="country_warning">
+                成功注册帐号后，国家/地区将不能被修改
+            </div>
+            <!-- <h3>手机号码</h3> -->
+            <h3>请输入密码</h3>
+            <div class="tel_box">
+                <div class="tel_start">
+                    <p>+86</p>
+                    <i></i>
+                </div>
+                <input type="text" class="tel_input" placeholder="请输入密码"">
+            </div>
+            <h3>请再次输入密码</h3>
+            <div class="tel_box">
+                <div class="tel_start">
+                    <p>+86</p>
+                    <i></i>
+                </div>
+                <input type="text" class="tel_input2" placeholder="请再次输入密码"">
+            </div>
+            <!-- button -->
+            <div class="login_up_btn">
+                <input type="submit" value="立即注册" class="login_up">
+
+            </div>
+            
+
+        </div>
+        <!-- message -->
+        <div class="msg">
+            <i class="msg_select"></i>
+            注册帐号即表示您同意并愿意遵守小米 
+            <a href="#" class="msg_userXieYi">用户协议</a>
+            和
+            <a href="#" class="msg_YinSi">隐私政策</a>
+        </div>
+
+
+    </div>
+    <!-- bottom  -->
+    <div class="bottom">
+        <div class="bottom_list">
+            <ul>
+                <li>
+                    <a href="">
+                        简体
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        繁体
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        English
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        常见问题
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bottom_info">
+            <span>
+                    小米公司版权所有-京ICP备10046444-
+                    <i></i>
+                    京公网安备11010802020134号-京ICP证110507号
+            </span>
+        </div>
+
+
+    </div>
+
+
+    <script>
+            var obtn = document.querySelector('.login_up');
+            var oinp1 = document.querySelector('.user_input');
+            var oinp2 = document.querySelector('.tel_input');
+            var oinp3 = document.querySelector('.tel_input2');
+            oinp3.onblur = function () {
+                if (oinp2.value != oinp3.value) {
+                    alert('两次输入的密码不同,请重新输入');
+                    oinp2.value = '';
+                    oinp3.value = '';
+                }
+            }
+            // 这里获取的data值就是ajax里面的res值(从php文件responseText获得的)
+            oinp1.onchange = function () {
+                var val1 = oinp1.value;
+                var obj = {
+                    method:"post",
+                    data:{
+                        username:val1,
+                        password:''
+                    },
+                    success: function (data) {
+                        // console.log(data);
+                        // console.log(typeof data);
+                        data = JSON.parse(data);
+                      alert(data.msg);
+                    }
+                }
+                sendAjax('login_up.php', obj)
+            }
+            obtn.onclick = function () {
+                var val1 = oinp1.value;
+                var val2 = oinp2.value;
+                var obj = {
+                    method:'post',
+                    data:{
+                        username:val1,
+                        password:val2
+                    },
+                    success: function success(data) {
+                        window.location.href = 'index.html';
+                        // alert(data);
+                    }
+                }
+                sendAjax('login_up.php', obj)
+            } 
+    
+        </script>
+        
+</body>
+
+</html>

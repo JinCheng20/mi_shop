@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var Core = {};
+    Core.menu = {
+        bodymenudata: [
+            [{
+                    text: "a1",
+                    data: [
+                        [{
+                            text: "a2",
+                            func: function () {
+                                ZENG.msgbox.show("a3！", 1, 2000);
+                            }
+                        }, {
+                            text: "a4",
+                            func: function () {
+                                ZENG.msgbox.show("a5！", 1, 2000);
+                            }
+                        }, {
+                            text: "a6",
+                            func: function () {
+                                ZENG.msgbox.show("a7！", 1, 2000);
+                            }
+                        }]
+                    ]
+                },
+                {
+                    text: "a8",
+                    func: function () {
+                        $('body').reload();
+                    }
+                }, {
+                    text: "a9",
+                    data: [
+                        [{
+                            text: "a10",
+                            func: function () {
+                                ZENG.msgbox.show("a11", 1, 2000);
+                            }
+                        }, {
+                            text: "Execl",
+                            func: function () {
+                                ZENG.msgbox.show("Execl！", 1, 2000);
+                            }
+                        }]
+                    ]
+                }, {
+                    text: "a12",
+                    func: function () {
+                        Core.showDesktop();
+                    }
+                }
+            ],
+            [{
+                text: "a13()",
+                data: [
+                    [{
+                        text: "a14",
+                        func: function () {
+                            $(this).attr("style",
+                                'background:url(images/background.jpg) repeat right bottom transparent;'
+                            );
+                        }
+                    }, {
+                        text: "a15",
+                        func: function () {
+                            $(this).attr("style",
+                                'background:url(images/background2.jpg) repeat right bottom transparent;'
+                            );
+                        }
+                    }]
+                ]
+            }]
+        ],
+        icosmenudata: [
+            [{
+                text: "a16"
+            }, {
+                text: "a17"
+            }, {
+                text: "a18"
+            }],
+            [{
+                text: "a19"
+            }]
+        ]
+    };
+    console.log(Core);
+    
+</script>
+
+</html>

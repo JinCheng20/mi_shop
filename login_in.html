@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米账号 - 登录</title>
+    <link rel="stylesheet" href="css/login_in.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="header">
+        <div class="header_logo">
+            <a href="index.html"" class=" header_a"></a>
+        </div>
+    </div>
+
+    <!-- banner -->
+    <div id="banner">
+        <div class="banner_show_img">
+            <a href="https://item.mi.com/product/10000117.html" target="_blank">
+            </a>
+        </div>
+    </div>
+
+
+    <!-- form login_in -->
+    <div id="form_login_in">
+        <div class="form_top">
+            <a class="form_top_a1 a_in">帐号登录</a>
+            <span class="form_top_line">丨</span>
+            <a class="form_top_a2 a_out">扫码登录</a>
+        </div>
+
+        <!-- 手机号登陆 -->
+        <div class="tel_login">
+            <div class="form_inp">
+                <input type="text" name="" id="input_name" placeholder="邮箱/手机号码/小米ID" class="form_name">
+                <input type="password" name="" id="input_pass" placeholder="密码" class="form_pass">
+                <span class="login_in_error">
+                    <i class="login_in_error_pic"></i>
+                    <em class="login_in_error_info">用户名或密码不正确</em>
+                </span>
+                <input class="form_inp_btn" value="登录" type="submit">
+                <a href="#" class="form_inp_a1">手机短信登录/注册</a>
+                <a href="login_up.html" class="form_top_login_up">立即注册</a>
+                <span class="form_top_line2">丨</span>
+                <a href="#" class="form_top_find_pass">忘记密码</a>
+            </div>
+
+            <div class="other_login_type">
+                <fieldset class="other_login_type_line">
+                    <legend class="other_legend">其他方式登录</legend>
+                </fieldset>
+                <div class="other_login_icon">
+                    <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=100284651&redirect_uri=https://account.xiaomi.com/pass/sns/login/load&state=7b22736964223a226d695f6573686f70222c226c6f63616c65223a227a685f434e222c2263616c6c6261636b223a2268747470732533412532462532466f726465722e6d692e636f6d2532466c6f67696e25324663616c6c6261636b253346666f6c6c6f77757025334468747470732532353341253235324625323532467777772e6d692e636f6d25323532462532367369676e2533444e7a59334d446b31597a637a4e6d55774d474d344f4441784f5745304e6a52694e5455355a4751794d7a4668596a466d4f4755304e77253243253243222c226170706964223a22313030323834363531227d"
+                        class="icon_qq btn_qq">
+                        <i class="icon_qq_i"></i>
+                    </a>
+                    <a href="https://api.weibo.com/oauth2/authorize?response_type=code&client_id=2996826273&redirect_uri=https://account.xiaomi.com/pass/sns/login/load&state=7b22736964223a226d695f6573686f70222c226c6f63616c65223a227a685f434e222c2263616c6c6261636b223a2268747470732533412532462532466f726465722e6d692e636f6d2532466c6f67696e25324663616c6c6261636b253346666f6c6c6f77757025334468747470732532353341253235324625323532467777772e6d692e636f6d25323532462532367369676e2533444e7a59334d446b31597a637a4e6d55774d474d344f4441784f5745304e6a52694e5455355a4751794d7a4668596a466d4f4755304e77253243253243222c226170706964223a2232393936383236323733227d"
+                        class="icon_weibo btn_weibo">
+                        <i class="icon_weibo_i"></i>
+                    </a>
+                    <a href="https://auth.alipay.com/login/express.htm?goto=https%3A%2F%2Fmemberexprod.alipay.com%3A443%2Fauthorize%2FuserAuthQuickLoginAction.htm%3Fe_i_i_d%3D9b9efe02a843e2c0a41539b300cbb199"
+                        class="icon_alipay btn_alipay">
+                        <i class="icon_alipay_i"></i>
+                    </a>
+                    <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxa21de3acc0d5e79b&redirect_uri=https%3A%2F%2Faccount.xiaomi.com%2Fpass%2Fsns%2Flogin%2Fload&response_type=code&scope=snsapi_login&state=WEIXIN#wechat_redirect"
+                        class="icon_weixin btn_weixin">
+                        <i class="icon_weixin_i"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 二维码登录 -->
+        <div class="ewm_login">
+            <img src="img/ewm.png" alt="" class="login_img">
+            <span class="ewm_login_info">使用<i>小米商城APP</i>扫一扫</span>
+            <span>小米手机可打开「设置」>「小米帐号」扫码登录</span>
+        </div>
+    </div>
+
+
+    <!-- bottom  -->
+    <div class="bottom">
+        <div class="bottom_list">
+            <ul>
+                <li>
+                    <a href="">
+                        简体
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        繁体
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        English
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        常见问题
+                    </a>
+                    <span>丨</span>
+                    <a href="">
+                        隐私政策
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bottom_info">
+            <span>
+                小米公司版权所有-京ICP备10046444-
+                <i></i>
+                京公网安备11010802020134号-京ICP证110507号
+            </span>
+        </div>
+
+
+    </div>
+    <script src="js/login_in.js"></script>
+    <script src="js/ajax1.0.0.js"></script>
+    <script>
+        // 登录验证
+        var oinp_user = document.querySelector('.form_name');
+        var oinp_pass = document.querySelector('.form_pass');
+        var ologin_in_btn = document.querySelector('.form_inp_btn');
+        var ologin_in_error = document.querySelector('.login_in_error');
+
+
+        ologin_in_btn.onclick = function () {
+            var user_val = oinp_user.value,
+                pass_val = oinp_pass.value;
+                if(typeof user_val != NaN){
+                    
+                }
+
+            var obj = {
+                method:'POST',
+                data: {
+                    username: user_val,
+                    password: pass_val
+                },
+                success: function (data) {
+                    // data = JSON.parse(data);
+                    // console.log(typeof data);
+                    console.log(data);
+                    data = JSON.parse(data);
+                    if (data.code == 1000) {
+                        location.href = 'index.html';
+                    }
+                    else{
+                        ologin_in_error.style.display = 'block';
+                    }
+                }
+            }
+            sendAjax('login_in.php', obj);
+        }
+    </script>
+
+</body>
+
+</html>

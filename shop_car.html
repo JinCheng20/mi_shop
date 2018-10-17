@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的购物车 - 小米商城</title>
+    <link rel="stylesheet" href="css/shop_car.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- top_content -->
+    <div class="top_content">
+        <div class="top_nav">
+            <div class="top_logo">
+                <a href="index.html" class="logo"></a>
+            </div>
+            <div class="top_info">
+                <h2>我的购物车</h2>
+                <span>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</span>
+            </div>
+            <div class="top_href">
+                <a href="login_in.html" class="top_login_in" target="_blank">登录</a>
+                <span>丨</span>
+                <a href="login_up.html" class="top_login_up" target="_blank">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- shop_content -->
+    <div class="shop_content">
+        <!-- 购买的商品详情 -->
+        <div class="head_content">
+            <div class="goods_con">
+                <div class="goods_con_menu">
+                    <div class="goods_sel">
+                        <input class="select_box quanxuan" type="checkbox" value="1">
+                        <span>全选</span>
+                    </div>
+                    <div class="goods_kg">&nbsp;</div>
+                    <div class="goods_name">
+                        商品名称
+                    </div>
+                    <div class="goods_price">
+                        单价
+                    </div>
+                    <div class="goods_num">
+                        数量
+                    </div>
+                    <div class="goods_total">
+                        小计
+                    </div>
+                    <div class="goods_action">
+                        操作
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 添加的物品 -->
+        <!-- <div class="all_goods"> -->
+        <!-- 用户选购的商品 -->
+        <!-- <div class="item-box goods_con">
+                <div class="goods_sel"> <input class="select_box xuanze" type="checkbox"> </div>
+                <div class="goods_kg">&nbsp;</div>
+                <div class="goods_name goods_name1"></div>
+                <div class="goods_price danjia"></div>
+                <div class="goods_num" style="border: 1px solid #e0e0e0;line-height: 40px;margin-top: 15px;">
+
+                    <a class="J_minus"> - </a>
+                    <input class="shuliang" tyep="text" name="2183600020_0_buy" value="">
+                    <a class="J_plus"> + </a>
+
+                </div>
+                <div class="goods_total zongfeiyong"></div>
+                <div class="goods_action">
+                    <a class="delete">x</a>
+                </div>
+            </div> -->
+        <!-- </div> -->
+        <!-- 结算 -->
+        <div class="goods_con jiesuan">
+            <div class="section-left">
+                <a href="javascript:void(0);" class="back-shopping">继续购物</a>
+                <span class="cart-  total">共 <i id="J_cartTotalNum">0</i> 件商品，已选择 <i id="J_selTotalNum">0</i> 件</span>
+            </div>
+            <a class="btn-disabled" id="J_goCheckout">去结算</a>
+            <span class="total-price">
+                合计：<em id="J_cartTotalPrice">0</em>元
+            </span>
+
+        </div>
+    </div>
+</body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/shop_car.js"></script>
+<!-- <script>
+var shopCar =(function(){
+
+    return {
+        init:function(){
+
+        },
+        event:function(){
+
+        },
+    }
+}())
+
+
+    $('.delete').click(function () {
+        $(this).parents('.item-box').remove()
+        if ($(this).parents('.item-box').find('.xuanze').prop("checked") == true) {
+            $('#J_cartTotalNum').text( $('#J_cartTotalNum').text()-1)
+            $('#J_selTotalNum').text( $('#J_selTotalNum').text()-$(this).parents('.item-box').find('.shuliang').val())
+            $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) - parseInt($(this).parents(
+                '.item-box').children('.zongfeiyong').text()))
+        }
+    })
+
+    $(".quanxuan").click(function () {
+        if (this.checked) {
+            var zzz = 0;
+            var xxx = 0;
+            $('#J_cartTotalNum').text(0)//总价格
+            $('#J_selTotalNum').text(0)//总选中
+            $("input[type='checkbox']").prop("checked", true);
+            $('#J_cartTotalNum').text($('#J_cartTotalNum').text() - 0 + $("input[type='checkbox']").length - 1)
+
+            var x1 = $('.shuliang').val()
+            for (var i = 0; i < $('.shuliang').length; i++) {
+                zzz = zzz - 0
+                zzz += $('.shuliang')[i].value - 0
+                xxx += $('.shuliang')[i].value * parseInt($('.danjia')[i].innerHTML)
+            }
+            $('#J_selTotalNum').text(zzz)
+            $('#J_cartTotalPrice').text(xxx)
+        } else {
+            $("input[type='checkbox']").prop("checked", false);
+            $('#J_cartTotalNum').text(0)
+            $('#J_selTotalNum').text(0)
+            $('#J_cartTotalPrice').text(0)
+        }
+
+    });
+    $('.J_minus').click(function () {
+        if ($(this).siblings('.shuliang').val() >= 1) {
+            $(this).siblings('.shuliang').val($(this).siblings('.shuliang').val() - 1);
+            $(this).parent('.goods_num').siblings('.zongfeiyong').text($(this).parent('.goods_num').siblings(
+                    '.zongfeiyong').text().match(/\d+/) - $(this).parent('.goods_num').siblings('.danjia').text()
+                .match(/\d+/) + '元')
+            console.log($(this).parent('.goods_num').siblings('.goods_sel').children(".xuanze").prop("checked"))
+            if ($(this).parent('.goods_num').siblings('.goods_sel').children(".xuanze").prop("checked") == true) {
+                $('#J_selTotalNum').text($('#J_selTotalNum').text() - 1)
+                $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) - parseInt($(this).parent(
+                    '.goods_num').siblings('.danjia').text()))
+            }
+
+
+        }
+    });
+    $('.J_plus').click(function () {
+        if ($(this).siblings('.shuliang').val() >= 0) {
+            $(this).siblings('.shuliang').val($(this).siblings('.shuliang').val() - 0 + 1);
+            $(this).parent('.goods_num').siblings('.zongfeiyong').text(parseInt($(this).parent('.goods_num').siblings(
+                '.zongfeiyong').text().match(/\d+/)) + parseInt($(this).parent('.goods_num').siblings(
+                '.danjia').text().match(/\d+/)) + '元')
+            if ($(this).parent('.goods_num').siblings('.goods_sel').children(".xuanze").prop("checked") == true) {
+                $('#J_selTotalNum').text($('#J_selTotalNum').text() - 0 + 1)
+                $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) + parseInt($(this).parent(
+                    '.goods_num').siblings('.danjia').text()))
+
+            }
+        }
+    });
+    $('.xuanze').click(function () {
+        var zzz = 0;
+        if (this.checked) {
+            $('#J_cartTotalNum').text($('#J_cartTotalNum').text() - 0 + 1)
+            $('#J_selTotalNum').text($('#J_selTotalNum').text() - 0 + parseInt($(this).parent('.goods_sel').siblings(
+                '.goods_num').children('.shuliang').val() - 0))
+            $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) + parseInt($(this).parent(
+                '.goods_sel').siblings('.zongfeiyong').text()))
+        } else {
+            $('#J_cartTotalNum').text($('#J_cartTotalNum').text() - 1)
+            $('#J_selTotalNum').text($('#J_selTotalNum').text() - $(this).parent('.goods_sel').siblings(
+                '.goods_num').children('.shuliang').val())
+            $(".quanxuan").prop("checked", false);
+            $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) - parseInt($(this).parent(
+                '.goods_sel').siblings('.zongfeiyong').text()))
+        }
+    })
+    $('.shop_content').click(function () {
+        if ($('#J_cartTotalPrice').text() != 0) {
+            $('#J_goCheckout').css('background', '#ff6700');
+        } else {
+            $('#J_goCheckout').css('background', '#ccc');
+        }
+
+    })
+    
+</script> -->
+
+</html>
