@@ -92,16 +92,9 @@ obanner_box.onmouseout = function () {
 
 // 下方内容栏轮播图
 var mySwiper2 = new Swiper('.bottom_pic_box_change', {
-    // loop: true,
-    // autoplay: {
-    //     delay: 2000,
-    //     stopOnLastSlide: false,
-    //     disableOnInteraction: false,
-    //     },
     fadeEffect: {
         crossFade: true,
     },
-    // effect: 'fade',
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

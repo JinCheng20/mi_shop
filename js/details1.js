@@ -138,7 +138,6 @@ $('.choose_box1').children().click(function () {
   //   }
 })
 
-
 //购买商品的保障服务 打钩选项
 $('.fuwu2').click(function () {
   $('.fuwu3').removeClass('active');
@@ -174,7 +173,6 @@ $('.fuwu2').click(function () {
   }
 })
 
-
 $('.fuwu3').click(function () {
   $('.fuwu2').removeClass('active');
   $('.fuwu2').children('.duigou1').text('');
@@ -208,15 +206,10 @@ $('.fuwu3').click(function () {
   }
 })
 
-
 // 点击修改地址
 // $('.switch-choose-regions').click(function(){
 
 // })
-
-
-
-
 
 // 点击加入购物车按钮  创建localStorage
 $('.add_goods_btn').click(function () {

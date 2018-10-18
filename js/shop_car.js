@@ -39,7 +39,6 @@ if (localStorage.length != 0) {
 }
 
 // 单选
-// function danxuan() {
 $('.xuanze').click(function () {
     if ($(this).is(':checked')) {
         $('#J_cartTotalNum').text(parseInt($('#J_cartTotalNum').text()) + 1);
@@ -68,9 +67,7 @@ $(".quanxuan").click(function () {
         $('#J_selTotalNum').text(0) //总选中2
         $(".xuanze").prop("checked", true);
         $('#J_cartTotalNum').text($(".xuanze").length);
-        // var x1 = $('.shuliang').val()
         for (var i = 0; i < $('.shuliang').length; i++) {
-            // num = num - 0
             num += $('.shuliang')[i].value - 0
             total_price += $('.shuliang')[i].value * parseInt($('.danjia')[i].innerHTML)
         }
@@ -107,10 +104,9 @@ $('.delete').click(function () {
         $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) - parseInt($(this).parents(
             '.item-box').children('.zongfeiyong').text()))
     }
-
 })
 
-// -
+// - button
 $('.J_minus').click(function () {
     if ($(this).siblings('.shuliang').val() >= 1) {
         // 获取索引 根据索引来进行本地存储的删除
@@ -118,13 +114,10 @@ $('.J_minus').click(function () {
         var str = window.localStorage.getItem('goods');
         str = JSON.parse(str);
         var num = str[goods_index].token;
-        // num++;
         // str.splice(goods_index, 1, );
         str[goods_index].token = --num;
-
         str = JSON.stringify(str);
         window.localStorage.setItem('goods', str);
-
         $(this).siblings('.shuliang').val($(this).siblings('.shuliang').val() - 1);
         $(this).parent('.goods_num').siblings('.zongfeiyong').text($(this).parent('.goods_num').siblings(
                 '.zongfeiyong').text().match(/\d+/) - $(this).parent('.goods_num').siblings('.danjia').text()
@@ -135,12 +128,10 @@ $('.J_minus').click(function () {
             $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) - parseInt($(this).parent(
                 '.goods_num').siblings('.danjia').text()))
         }
-
-
     }
 });
 
-// +
+// + button
 $('.J_plus').click(function () {
     if ($(this).siblings('.shuliang').val() >= 0) {
         // 获取索引 根据索引来进行本地存储的删除
@@ -149,10 +140,8 @@ $('.J_plus').click(function () {
         str = JSON.parse(str);
         var num = str[goods_index].token;
         str[goods_index].token = ++num;
-
         str = JSON.stringify(str);
         window.localStorage.setItem('goods', str);
-
         $(this).siblings('.shuliang').val(parseInt($(this).siblings('.shuliang').val()) + 1);
         $(this).parent('.goods_num').siblings('.zongfeiyong').text(parseInt($(this).parent('.goods_num').siblings(
             '.zongfeiyong').text().match(/\d+/)) + parseInt($(this).parent('.goods_num').siblings(
@@ -161,7 +150,6 @@ $('.J_plus').click(function () {
             $('#J_selTotalNum').text($('#J_selTotalNum').text() - 0 + 1)
             $('#J_cartTotalPrice').text(parseInt($('#J_cartTotalPrice').text()) + parseInt($(this).parent(
                 '.goods_num').siblings('.danjia').text()))
-
         }
     }
 });
